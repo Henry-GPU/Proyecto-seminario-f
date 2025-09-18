@@ -1,0 +1,100 @@
+/* .modal-container{
+    top:0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    filter: opacity(1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+.modal-background{
+    top:0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    filter: opacity(0.8);
+    background-color: #000000;
+}
+
+.modal-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 500px;
+    background-color: #ffff;
+    padding: 2rem;
+    filter: opacity(1);
+    border-radius: 2rem;
+    position: absolute;
+}
+
+.modal-content h2{
+    margin: 0 0 1rem 0;
+    padding: 0;
+}
+.modal-form{
+    width: 95%;
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+    gap: 0.2rem;
+}
+.modal-form input{
+    width: 100%;
+}
+.modal-form-footer{
+    margin-top: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    gap: 0.7rem;
+}
+
+input:disabled{
+    cursor: not-allowed;
+}
+
+button, .modal-form-footer a, .form-footer a{
+    width: 5rem;
+    height: 2rem;
+    border-radius: 1rem;
+    border: 0;
+    color: #ffffff;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    line-height: 1;
+    font-size: 0.8rem !important;
+}
+
+.cancel-button{
+    background-color: #FF6F61 !important;
+    font-size: 0.8rem;
+}
+.cancel-button:hover{
+    background-color: #ca5a50 !important;
+}
+.add-spec-button{
+    background-color: #36D7B7 !important;
+}
+.accept-button{
+    background-color: #4267B2 !important;
+    font-size: 0.8rem;
+}
+.accept-button:hover{
+    background-color: #365899 !important;
+}
+.modal-form label{
+    font-weight: 600;
+}
+
+@media (max-width:460px) {
+    .modal-content{
+        max-width: 350px;
+    }
+} */

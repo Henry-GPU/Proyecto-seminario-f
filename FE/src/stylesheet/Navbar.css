@@ -1,0 +1,25 @@
+.navbar-container{
+    @apply w-[200px] h-screen fixed top-0 left-0 bg-[#151514] 
+        flex-wrap text-white flex-col pt-12 pl-8 
+        shadow-[0px_0px_10px_#00000081] z-40 overflow-hidden gap-2
+        hidden md:flex;
+}
+.nav-placeholder{
+    @apply  w-[200px] h-svh min-w-[200px];
+}
+
+.navbar-item{
+    @apply flex items-center w-full h-16 px-5 py-4 overflow-hidden text-sm text-left transition-all rounded-s-full;
+}
+.navbar-item:hover{
+    @apply scale-105 bg-zinc-700;
+}
+.navbar-item-selected, .navbar-item-selected:hover{
+    @apply scale-110;
+}
+.navbar-item-selected{
+    @apply bg-[#d7f266] text-[#151514];
+}
+.navbar-item-selected:hover{
+    @apply bg-[#d7f266];
+}

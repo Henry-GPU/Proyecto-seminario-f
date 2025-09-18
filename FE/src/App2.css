@@ -1,0 +1,189 @@
+/* 🎨 Variables de color */
+:root {
+  --bg: #ffffff;
+  --primary: #426fe4;
+  --secondary: #e3a43d;
+  --text: #333333;
+  --light: #f4f6fb;
+}
+
+/* 🖥️ Layout general */
+.app {
+  display: flex;
+  height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, sans-serif;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  
+}
+
+.page-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* 📂 Sidebar */
+.sidebar {
+  width: 220px;
+  background: var(--primary);
+  color: #fff;
+  padding: 20px;
+}
+
+.sidebar .logo {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.sidebar ul li:hover {
+  background: rgba(255, 255, 255, 0.2);
+  padding-left: 5px;
+  transition: all 0.2s ease;
+}
+
+/* 📊 KPI Boxes */
+.kpi-section {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.kpi-box {
+  flex: 1;
+  background: var(--light);
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.kpi-box h3 {
+  font-size: 25px;
+  color: var(--primary);
+}
+
+.kpi-box p {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+/* 🔍 Filter bar */
+.filter-bar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filter-bar select,
+.filter-bar input {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.primary-btn {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.primary-btn:hover {
+  background: #2f50a9;
+}
+
+/* 📑 Tabla */
+.debt-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.debt-table th,
+.debt-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.debt-table th {
+  background: var(--primary);
+  color: #fff;
+}
+
+.debt-table tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+/* 🏷️ Status badge */
+.status-badge {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.status-badge.paid {
+  background: green;
+}
+
+.status-badge.pending {
+  background: orange;
+}
+
+.status-badge.late {
+  background: red;
+}
+
+/* 🔘 Action buttons */
+.action-btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  background: var(--secondary);
+  color: #fff;
+  cursor: pointer;
+}
+
+.action-btn:hover {
+  background: #c17e27;
+}
+
+/* 📈 Chart box */
+.chart-box {
+  background: var(--light);
+  padding: 18px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.chart-placeholder {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eaeaea;
+  border-radius: 6px;
+  margin-top: 10px;
+}

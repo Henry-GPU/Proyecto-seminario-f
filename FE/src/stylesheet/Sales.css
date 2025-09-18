@@ -1,0 +1,54 @@
+/* .sales-container{
+  width: 100%;
+  height: 100vh;
+}
+.sale-card, .add-sale-card{
+  @apply relative flex flex-col justify-between items-center bg-white overflow-hidden
+  rounded-lg transition-transform max-h-[350px] w-[calc(100%/2-10px)]
+  m-0 hover:scale-[101%] sm:w-[calc(100%/3-10px)] md:w-[calc(100%/3-10px)] lg:w-[calc(100%/4-10px)] z-10
+  select-none text-sm drop-shadow-sm border;
+}
+
+.sale-option-button-container{
+  @apply z-20 flex justify-end w-full px-2 mt-2 text-xl font-bold text-neutral-500;
+}
+.sale-option-button{
+  @apply  w-8 h-8 p-1 rounded-full hover:bg-slate-100;
+ }
+
+.sales-form-container{
+  width: 500px;
+  background-color: #ffffff;
+  height: auto;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: var(--shadow-card);
+}
+
+.sales-content{
+  width: 100%;
+}
+
+.sales-product-detail{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.sales-product-detail p{
+  width: 100%;
+  margin: 0.2rem;
+}
+
+.sales-product-specs{
+  width: 100%;
+  margin-top: 0;
+  list-style: none;
+  padding: 0;
+}
+.form-footer{
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  gap: 0.5rem;
+} */

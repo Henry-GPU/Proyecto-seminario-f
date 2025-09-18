@@ -1,0 +1,49 @@
+/* .card-loader-overlay{
+  width: 500px;
+  height: 300px;
+  position: absolute;
+  border-radius: 2rem;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 10px #0000001f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 800;
+  transition: opacity 1s ease, visibility 0.5s ease;
+  visibility: hidden;
+  overflow: hidden;
+}
+
+.card-loader-overlay.visible {
+  visibility: visible;
+  transform: scale(1);
+}
+.card-loader-overlay.hidden {
+  transform: scale(0);
+  visibility: hidden;
+}
+.card-loader-spinner{
+  border: 5px solid #b6b6b6;
+  border-top: 5px solid #242424;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin-right: 2rem;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.card-loader-overlay p {
+  margin-top: 10px;
+  color: #242424;
+  font-size: 1.2rem;
+  text-align: center;
+} */

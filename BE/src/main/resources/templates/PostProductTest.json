@@ -1,0 +1,17 @@
+{
+    "name": "UPS 6KVA",
+    "price": 20000.00,
+    "productTypeId":1,
+    "brandId":1,
+    "modelId": 1,
+    "stock":1,
+    "productSpecificationDTOs":[
+        {"specificationId": 1, "value": "6KVA"}
+    ],
+    "productSerialDTOs":[
+        {
+            "serialNumber": "1000129921001",
+            "purchaseDate": "2024-11-15"
+         }
+    ]
+}

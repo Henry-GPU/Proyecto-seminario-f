@@ -1,0 +1,13 @@
+/* .serial-option{
+  @apply px-3 py-1 rounded-xl text-sm border cursor-pointer select-none;
+}
+.serial-option-selected{
+  @apply bg-teal-300 px-3 py-1 rounded-xl text-sm select-none;
+}
+
+.range-option{
+  @apply px-3 py-1 rounded-xl text-sm border cursor-pointer select-none;
+}
+.range-option-selected{
+  @apply bg-lime-300 px-3 py-1 rounded-xl text-sm select-none;
+} */
