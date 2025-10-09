@@ -1,0 +1,43 @@
+/* .options-grid{
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  padding-right: 2rem;
+  align-items: center;
+  gap: 1.5rem;
+}
+.option-card{
+  width: 500px;
+  height: 150px;
+  display: flex;
+  padding: 1rem;
+  border: #c9c8c8 1px solid;
+  border-radius: 2rem;
+  justify-content: center;
+  text-align: center;
+  transition: transform 100ms ease-in-out;
+  cursor: pointer;
+}
+.option-card-image{
+  height:100%;
+}
+.option-card-info{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.option-card:hover{
+  transform: scale(1.05);
+}
+
+.option-card-info p, .option-card-info h2{
+  margin: 0.2rem 1rem;
+}
+.option-card-info h2{
+  color: #444444;
+}
+.option-card-info p{
+  color: #505050;
+} */

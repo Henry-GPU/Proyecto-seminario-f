@@ -1,0 +1,23 @@
+/* .svg-container {
+  position: relative;
+  display: inline-block;
+}
+
+.info-tooltip {
+  display: none;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 8px 12px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  border-radius: 4px;
+  font-size: 14px;
+  white-space: nowrap;
+  z-index: 100;
+}
+
+.svg-container:hover .info-tooltip {
+  display: block;
+} */

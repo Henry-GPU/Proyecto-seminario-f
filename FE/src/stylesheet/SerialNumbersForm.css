@@ -1,0 +1,36 @@
+/* .serial-number-form-item{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.serial-number-form-item label{
+    width: 100%;
+    text-align: left;
+    margin-left: 1rem;
+    margin-bottom: 0.5rem;
+}
+.serial-numbers-content h2{
+    margin-bottom: 1.5rem;
+}
+.serial-number-form-item input{
+    width: 100%;
+    border-radius: 1rem;
+    border: 1px solid #b1b1b1;
+    padding: 0.5rem 1rem;
+    margin-bottom: 0.6rem;
+}
+.serial-number-item-footer{
+    width: 100%;
+    display: flex;
+    justify-content: right;
+}
+.delete-button{
+    width: 3rem;
+    background-color: #FF6F61;
+    border: none;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+} */

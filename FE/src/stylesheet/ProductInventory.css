@@ -1,0 +1,57 @@
+/* 
+.product-grid{
+  @apply relative flex flex-wrap justify-center flex-1 gap-2 pt-2 pb-24;
+}
+
+.product-card, .add-product-card{
+  @apply relative flex flex-col justify-center items-center bg-[#ffffff] overflow-hidden
+  shadow-sm rounded-lg transition-transform max-h-[360px] w-[calc(100%/2-10px)]
+  m-0 hover:scale-[101%] sm:w-[calc(100%/3-10px)] md:w-[calc(100%/3-15px)] lg:w-[calc(100%/5-15px)] z-10
+  select-none drop-shadow-sm border py-1;
+}
+
+
+.product-image-container{
+  @apply w-full h-[150px] flex justify-center items-center overflow-hidden;
+}
+.product-option-button-container{
+  @apply z-20 right-1 top-1 fixed bg-white flex h-8 w-8 items-center justify-center rounded-full text-xl font-bold text-neutral-500
+  hover:bg-gray-50 shadow-lg border-gray-50 border;
+
+}
+.product-option-button{
+ @apply w-8 h-8 p-2 rounded-full hover:bg-slate-100;
+}
+
+.product-options-menu{
+  @apply text-sm max-w-52 absolute z-30 flex flex-wrap p-1 bg-white border ml-1 rounded-lg shadow-md top-7 right-7;
+}
+.product-menu-option{
+  @apply min-w-full px-2 py-1 text-center rounded-lg cursor-pointer hover:bg-neutral-200;
+}
+.product-menu-option a{
+  @apply w-full
+}
+.product-image{
+  @apply w-full h-full object-contain
+}
+.product-info{
+  @apply p-3 pb-0 text-center flex flex-grow flex-col justify-center gap-1
+}
+
+.product-name{
+  @apply text-sm font-bold break-words whitespace-normal text-neutral-700;
+}
+.product-price {
+  @apply text-sm text-lime-500;
+}
+.product-stock {
+  @apply text-sm text-neutral-500;
+}
+.add-product-card .product-info {
+  padding: 15px; 
+}
+
+
+
+ */

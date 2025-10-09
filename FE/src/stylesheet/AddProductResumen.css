@@ -1,0 +1,71 @@
+/* .product-resumen-item{
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  flex-wrap: wrap;
+  
+}
+.product-resumen-general-data{
+  width: 100%;
+}
+.product-resumen-general-data h2{
+  width: 100%;
+  font-size: 1.2rem;
+}
+.product-resumen-item-multiple h2{
+  width: 100%;
+  font-size: 1.2rem;
+}
+.product-resumen-item-multiple{
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.product-resumen-item-multiple h3{
+  color: #4e4e4e;
+  font-weight: 600;
+  width: 100%;
+  margin: 0;
+}
+
+.product-resumen-item p{
+  color: #4e4e4e;
+  flex:3;
+  margin: 0;
+  font-size: 0.9rem;
+}
+.info-container .serie-header{
+  flex: 2;
+  margin: 0;
+  margin-bottom: 0rem;
+}
+.info-container .purchase-date-header{
+  flex: 3;
+  margin: 0;
+  margin-bottom: 0rem;
+}
+.product-resumen-item h3{
+  font-size: 0.9rem;
+  color: #4e4e4e;
+  font-weight: 600;
+  flex:2;
+  margin: 0;
+}
+
+.info-container{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 400px) {
+  .product-resumen-item h3, .info-container .serie-header{
+    flex: 3;
+  }
+  .info-container .serie-header{
+
+  }
+} */

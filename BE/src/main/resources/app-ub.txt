@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/amipro_db
+    username: root
+    password: H3nryG4132002..
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  servlet:
+    multipart:
+      max-file-size: 30MB
+      max-request-size: 30MB
+  web:
+    resources:
+      static-locations: "file:///C:/Users/Henry Galeano/Documents/JavaServerImages/"
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    properties:
+      hibernate:
+        check_nullability: true
+upload:
+  path: "C:/Users/Henry Galeano/Documents/JavaServerImages"
+
+jwt:
+  expiration: 43200000  # 24 horas
+

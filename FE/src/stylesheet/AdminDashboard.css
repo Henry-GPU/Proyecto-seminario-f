@@ -1,0 +1,90 @@
+.dashboard-main-container{
+  @apply relative w-full text-neutral-100;
+}
+.modal-form-bg{
+  @apply absolute flex items-center justify-center w-full h-full bg-black opacity-50;
+}
+.modal-card{
+  @apply z-50 px-5 py-6 bg-white rounded-md;
+}
+.users-dashboard{
+  @apply flex justify-center w-full p-1 md:p-4;
+}
+.dashboard-item-button{
+  @apply flex items-center justify-center w-40 h-20 gap-2 px-6 text-xs text-white rounded-md drop-shadow-md md:w-52 md:h-20; 
+}
+.users{
+  @apply bg-gradient-to-b from-blue-400 to-blue-800;
+}
+.categories{
+  @apply bg-gradient-to-b from-[#8581FF] to-[#5423E4];
+}
+.customers{
+  @apply bg-gradient-to-b from-[#DF81FF] to-[#A80DA5];
+}
+.download-inventory{
+  @apply bg-gradient-to-b from-lime-400 to-lime-600;
+}
+.defective-products{
+  @apply bg-gradient-to-b from-red-500 to-red-800;
+}
+.dashboard-actions-container{
+  @apply flex flex-wrap justify-center w-full gap-2 p-4 md:justify-normal;
+}
+.dashboard-item-svg{
+  @apply w-auto h-8 rounded-full fill-white md:h-12;
+}
+.dashboard-item-title{
+  @apply flex-1 text-center;
+}
+.dashboard-table{
+  @apply w-full h-auto overflow-auto bg-neutral-900 border rounded-md;
+}
+.dashboard-simple-table{
+  @apply h-auto py-5 bg-white border rounded-md shadow-sm w-80 drop-shadow-sm;
+}
+.dashboard-table-title{
+  @apply items-center p-4 font-semibold;
+}
+.dashboard-table-specs{
+  @apply flex w-full gap-4 px-5 py-2 text-xs border-b-[1px];
+}
+.dashboard-table-item{
+  @apply relative flex items-center w-full gap-4 px-5 py-2 text-xs hover:bg-neutral-800; 
+}
+.dashboard-table-item-image{
+  @apply flex-[1] object-contain h-8;
+}
+.dashboard-table-item-more{
+  @apply rounded-full hover:cursor-pointer hover:bg-neutral-200 fill-neutral-500;
+}
+
+.more-menu{
+  @apply absolute z-30 flex flex-wrap w-32 bg-white rounded-lg shadow-md select-none right-12 top-5 drop-shadow-lg;
+}
+.more-menu-option{
+  @apply w-full p-2 text-center hover:bg-neutral-100 hover:cursor-pointer;
+}
+.categories-container{
+  @apply flex flex-wrap justify-center gap-4 p-4 md:justify-normal;
+}
+.category-button{
+  @apply w-auto px-5 h-10 text-xs bg-[#8AC6FF] rounded-md shadow-md font-bold;
+}
+.category-add-button{
+  @apply w-auto px-5 h-10 text-xs bg-[#7f7f80] rounded-md shadow-md font-bold;
+}
+.category-button.selected{
+  @apply bg-gradient-to-b from-[#2C99FF] to-[#0453CA];
+}
+.dashboard-tables-container{
+  @apply flex flex-wrap w-full px-4 justify-normal;
+}
+.dashboard-info{
+  @apply flex items-center gap-1 text-xs text-neutral-500;
+  
+}
+
+.dashboard-table-item-delete{
+  @apply w-4 h-4 fill-neutral-300 hover:fill-neutral-500 hover:cursor-pointer;
+}
