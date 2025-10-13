@@ -1,5 +1,6 @@
 package com.management.mysql.system.auth;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -23,8 +24,7 @@ public class LoginTest {
 
     @BeforeEach
     public void setUp() {
-        // TODO: Descarga chromedriver desde https://chromedriver.chromium.org/downloads y actualiza la ruta
-        System.setProperty("webdriver.chrome.driver", "/path/to/chromedriver");
+        WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");
         driver = new ChromeDriver(options);

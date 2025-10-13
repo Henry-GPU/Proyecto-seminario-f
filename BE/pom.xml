@@ -10,6 +10,7 @@
 	</parent>
 	<groupId>com.management.mysql</groupId>
 	<artifactId>system</artifactId>
+	
 	<version>0.0.1-SNAPSHOT</version>
 	<name>system</name>
 	<description>Demo project for Spring Boot</description>
@@ -100,6 +101,12 @@
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>4.21.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>5.8.0</version>
             <scope>test</scope>
         </dependency>
 	</dependencies>
