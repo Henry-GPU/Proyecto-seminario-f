@@ -15,14 +15,12 @@ import org.springframework.test.context.ActiveProfiles;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @ActiveProfiles("test")
 public class LoginTest {
 
     @LocalServerPort
-    private int port;
-
     private WebDriver driver;
+    private int port;
 
     @BeforeEach
     public void setUp() {
@@ -34,12 +32,11 @@ public class LoginTest {
 
     @Test
     public void testLogin() {
-        driver.get("http://localhost:" + port + "/"); // Asumiendo que la página de login es la raíz
-
+        driver.get("http://localhost:3000"); // Asumiendo que la página de login es la raíz
         // TODO: Actualiza los selectores para que coincidan con tu frontend
-        WebElement usernameField = driver.findElement(By.id("username"));
-        WebElement passwordField = driver.findElement(By.id("password"));
-        WebElement loginButton = driver.findElement(By.tagName("button"));
+        WebElement usernameField = driver.findElement(By.xpath("/html/body/div/div/div/div/div/form/div[1]/input"));
+        WebElement passwordField = driver.findElement(By.xpath("//*[@id=\"password\"]"));
+        WebElement loginButton = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div/div/div/form/div[3]/button"));
 
         usernameField.sendKeys("admin");
         passwordField.sendKeys("password");
@@ -47,7 +44,6 @@ public class LoginTest {
 
         // Agrega una aserción para verificar que el login fue exitoso.
         // Por ejemplo, puedes verificar la URL o un mensaje de bienvenida.
-        // assertEquals("http://localhost:" + port + "/dashboard", driver.getCurrentUrl());
     }
 
     @AfterEach
