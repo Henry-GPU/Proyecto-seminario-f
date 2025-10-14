@@ -32,8 +32,7 @@ public class LoginTest {
 
     @Test
     public void testLogin() {
-        driver.get("http://localhost:3000"); // Asumiendo que la página de login es la raíz
-        // TODO: Actualiza los selectores para que coincidan con tu frontend
+        driver.get("http://localhost:3000");
         WebElement usernameField = driver.findElement(By.xpath("/html/body/div/div/div/div/div/form/div[1]/input"));
         WebElement passwordField = driver.findElement(By.xpath("//*[@id=\"password\"]"));
         WebElement loginButton = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div/div/div/form/div[3]/button"));
@@ -41,9 +40,6 @@ public class LoginTest {
         usernameField.sendKeys("admin");
         passwordField.sendKeys("password");
         loginButton.click();
-
-        // Agrega una aserción para verificar que el login fue exitoso.
-        // Por ejemplo, puedes verificar la URL o un mensaje de bienvenida.
     }
 
     @AfterEach
