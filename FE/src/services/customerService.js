@@ -46,6 +46,15 @@ export const getCustomers = async ()=>{
   }
 };
 
+export const getCustomersWithDebtsAndNotCollection = async ()=>{
+  try {
+    const response = await apiClient.get("customers/get/con-deudas/sin-cobranza");
+    return response;
+  } catch (error) {
+    handleRequestError(error);
+  }
+}
+
 export const getTotalCustomers = async ()=>{
   try {
     const response = await apiClient.get("customers/get/total");

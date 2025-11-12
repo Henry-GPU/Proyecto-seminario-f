@@ -1,5 +1,6 @@
 package com.management.mysql.system.customer;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,7 @@ public class CustomerService {
   @Autowired
   private CustomerRepository customerRepository;
   @Autowired private CuotaRepository cuotaRepository;
-  @Autowired private DebtRepository debtService;
+  @Autowired private DebtRepository debtRepository;
 
   private class CustomerStatus {
     private static final int DELETED = 0;
@@ -29,6 +30,15 @@ public class CustomerService {
     private static final int INACTIVE = 2;
   }
 
+  public List<Customer> getAllCustomersWithDebtsAndNotCollection() {
+    List<Debt> deudas = debtRepository.findByEstado(0);
+    List<Customer> customersWithDebtsAndNoCollection = new ArrayList<>();
+    for(Debt d: deudas){
+      Customer c = d.getCustomer();
+      customersWithDebtsAndNoCollection.add(c);
+    }
+    return customersWithDebtsAndNoCollection;
+  }
 
   @Transactional
   public Customer createCustomer(Customer customer) {
@@ -39,7 +49,7 @@ public class CustomerService {
     Integer count = 0;
     List<Customer> allCustomers = customerRepository.findAll();
     for(Customer c: allCustomers){
-      Debt debt = debtService.findByCustomer_Id(c.getId());
+      Debt debt = debtRepository.findByCustomer_Id(c.getId());
       if(debt != null){
         count++;
       }
@@ -67,7 +77,7 @@ public class CustomerService {
 
     List<Customer> allCustomers = customerRepository.findAll();
     for(Customer c: allCustomers){
-      Debt debt = debtService.findByCustomer_Id(c.getId());
+      Debt debt = debtRepository.findByCustomer_Id(c.getId());
       if(debt != null){
         List<Cuota> cuotas = cuotaRepository.findByDeuda_id(debt.getId());
         int morasVencidas = 0;

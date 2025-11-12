@@ -21,8 +21,8 @@ public class CollectionService {
         return collectionRepository.save(collection);
     }
 
-    public Collection getAllCollections() {
-        return (Collection) collectionRepository.findAll();
+    public List<Collection> getAllCollections() {
+        return collectionRepository.findAll();
     }
 
     public Collection getCollectionById(Integer id) {

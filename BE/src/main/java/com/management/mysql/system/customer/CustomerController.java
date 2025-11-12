@@ -33,6 +33,7 @@ public class CustomerController {
   @Autowired
   private CustomerService customerService;
 
+
   @PostMapping("/create")
   public ResponseEntity<?> createCustomer(@RequestBody @Valid CustomerCreateRequest customerRequest) {
     Customer customer = new Customer();
@@ -55,6 +56,10 @@ public class CustomerController {
       return ResponseEntity.status(HttpStatus.BAD_REQUEST)
         .body("Algo salió mal al crear el cliente.");
     }
+  }
+  @GetMapping("/get/con-deudas/sin-cobranza")
+  public ResponseEntity<?> getAllCustomersWithDebtsAndNotCollection() {
+      return ResponseEntity.ok(customerService.getAllCustomersWithDebtsAndNotCollection());
   }
   
 

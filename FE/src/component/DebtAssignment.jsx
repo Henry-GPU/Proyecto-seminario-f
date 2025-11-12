@@ -3,9 +3,9 @@ import {
   BarChart, Bar, XAxis, YAxis, Tooltip, Legend, CartesianGrid, ResponsiveContainer
 } from "recharts";
 import { getTotalCustomers, getTotalClientesConDeudas } from "../services/customerService";
-import { getAllDebtAssignments } from "../services/DebtAssigmentService";
+import { getAllDebtAssignments, createDebtAssignment, getCollections } from "../services/DebtAssigmentService";
 import { getUsers } from "../services/userService";
-import { getCustomers } from "../services/customerService";
+import { getCustomersWithDebtsAndNotCollection } from "../services/customerService";
 import { getMontoPorCanal } from "../services/cobranzaService";
 
 const DebtAssignment = () => {
@@ -14,8 +14,9 @@ const DebtAssignment = () => {
   const [totalClientesConDeudas, setTotalClientesConDeudas] = useState(0);
   const [clientes, setClientes] = useState([]);
   const [montosPorCanal, setMontosPorCanal] = useState([]);
-  const [montoPorCanal, setMontoPorCanal] = useState(null);
+  const [collections, setCollections] = useState([]);
   const [cliente, setCliente] = useState(0);
+  const [collection, setCollection] = useState(0);
   const [usuarios, setUsuarios] = useState([]); 
   const [usuario, setUsuario] = useState(0);
   const [debtAssignments, setDebtAssignments] = useState([]);
@@ -32,6 +33,33 @@ const DebtAssignment = () => {
     }
   }
 
+  const loadCollections = async () => {
+    try {
+        getCollections().then((res)=>{
+        setCollections(res.data);
+      });
+    } catch (error) {
+      
+    }
+  };
+
+  const saveDebtAssignment = async () => {
+    try {
+      const data = {
+        idDeuda: cliente,
+        idUsuario: usuario,
+        idCobranza: collection,
+        descripcion: "Asignación desde el módulo",
+      };
+      console.log(data);
+      await createDebtAssignment(data);
+      setShowModal(false);
+      loadAllDebtAssigmnets(); // Recargar las asignaciones de deuda después de guardar
+    } catch (error) {
+      console.error("Error al guardar la asignación de deuda:", error);
+    }
+  };
+
   const loadUsers = async () => {
     try {
       getUsers().then((res)=>{  
@@ -44,7 +72,7 @@ const DebtAssignment = () => {
 
   const loadCustomers = async () => {
     try {
-      getCustomers().then((res)=>{    
+      getCustomersWithDebtsAndNotCollection().then((res)=>{    
         setClientes(res.data);
       }
       );
@@ -90,6 +118,7 @@ const DebtAssignment = () => {
     loadUsers();
     loadCustomers();
     loadMontosPorCanal();
+    loadCollections();
   }, []);
 
   // Datos para el gráfico: total por canal y número de clientes por canal
@@ -247,16 +276,14 @@ const DebtAssignment = () => {
                 <option key={u.id} value={u.id}>{u.fullName}</option>
               ))}
             </select>
-            <select>
-              <option value="">Seleccionar canal</option>
-              <option value="Visita Domiciliar">Visita Domiciliar</option>
-              <option value="Llamada Telefónica">Llamada Telefónica</option>
-              <option value="Correo Electrónico">Correo Electrónico</option>
-              <option value="Cobro Jurídico">Cobro Jurídico</option>
-              <option value="Automático">Automático</option>
+            <select id="collection" value={collection} onChange={(e) => setCollection(e.target.value)}>
+              <option value="0">Seleccionar Canal de Cobranza</option>
+              {collections?.map((u) => (
+                <option key={u.id} value={u.id}>{u.nombre}</option>
+              ))}
             </select>
             <div className="modal-actions">
-              <button className="btn-primary">Guardar</button>
+              <button className="btn-primary" onClick={() => saveDebtAssignment()}>Guardar</button>
               <button className="btn-danger" onClick={() => setShowModal(false)}>Cancelar</button>
             </div>
           </div>
