@@ -27,6 +27,7 @@ import CuentasMoraPage from './pages/CuentasMoraPage';
 import AccionesCobranzaPage from './pages/AccionesCobranza';
 import DashboardView from './component/DashboardViewx';
 import DebtAssignment from './component/DebtAssignment';
+import RegistroPago from './component/RegistroPago';
 
 function App() {
   const { accessToken } = useAccToken();
@@ -195,7 +196,7 @@ function MainContent({ userName, isAuth, setIsAuth, width, permissions, loading,
                 <ProtectedRoute isAuth={isAuth} permissions={permissions} allowedPermission={'MANAGE_PERMISSIONS'}>
                   <RegistroPago url={url} permissions={permissions} allowedPermission={'MANAGE_PERMISSIONS'}/>
                 </ProtectedRoute>
-              }
+              }></Route>
           </Routes>
         </div>
     </div>

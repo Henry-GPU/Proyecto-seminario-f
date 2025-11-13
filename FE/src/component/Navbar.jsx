@@ -89,7 +89,7 @@ function Navbar({permissions}){
 						: ''}`}
 				onClick={()=>setItemSelected(3)}
 			>Acciones de Cobranza</Link>
-			<Link>
+			<Link
                 to='/home/pagos'
                 className={
                     `navbar-item ${
