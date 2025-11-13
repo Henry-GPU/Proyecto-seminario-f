@@ -89,23 +89,32 @@ function Navbar({permissions}){
 						: ''}`}
 				onClick={()=>setItemSelected(3)}
 			>Acciones de Cobranza</Link>
+			<Link>
+                to='/home/pagos'
+                className={
+                    `navbar-item ${
+                        itemSelected === 4
+                        ? 'navbar-item-selected'
+                        : ''}`}
+                onClick={()=>setItemSelected(4)}
+            >Pagos</Link>
 			<Link 
 				to='/clientes' 
-				className={
-					`navbar-item ${
-						itemSelected === 4
-						? 'navbar-item-selected' 
-						: ''}`}
-				onClick={()=>setItemSelected(4)}
-			>Clientes</Link>
-			<Link 
-				to='/usuarios' 
 				className={
 					`navbar-item ${
 						itemSelected === 5
 						? 'navbar-item-selected' 
 						: ''}`}
 				onClick={()=>setItemSelected(5)}
+			>Clientes</Link>
+			<Link 
+				to='/usuarios' 
+				className={
+					`navbar-item ${
+						itemSelected === 6
+						? 'navbar-item-selected' 
+						: ''}`}
+				onClick={()=>setItemSelected(6)}
 			>Usuarios</Link>
 			<Link
 				to="/login"

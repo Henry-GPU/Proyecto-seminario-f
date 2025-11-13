@@ -189,6 +189,13 @@ function MainContent({ userName, isAuth, setIsAuth, width, permissions, loading,
                 </ProtectedRoute>
               } 
             />
+            <Route
+              path='/home/Pagos'
+              element={
+                <ProtectedRoute isAuth={isAuth} permissions={permissions} allowedPermission={'MANAGE_PERMISSIONS'}>
+                  <RegistroPago url={url} permissions={permissions} allowedPermission={'MANAGE_PERMISSIONS'}/>
+                </ProtectedRoute>
+              }
           </Routes>
         </div>
     </div>
