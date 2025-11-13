@@ -98,23 +98,32 @@ function Navbar({permissions}){
                         : ''}`}
                 onClick={()=>setItemSelected(4)}
             >Pagos</Link>
+			<Link
+                to='/home/pagosvencidos'
+                className={
+                    `navbar-item ${
+                        itemSelected === 5
+                        ? 'navbar-item-selected'
+                        : ''}`}
+                onClick={()=>setItemSelected(5)}
+            >PagosVencidos</Link>
 			<Link 
 				to='/clientes' 
-				className={
-					`navbar-item ${
-						itemSelected === 5
-						? 'navbar-item-selected' 
-						: ''}`}
-				onClick={()=>setItemSelected(5)}
-			>Clientes</Link>
-			<Link 
-				to='/usuarios' 
 				className={
 					`navbar-item ${
 						itemSelected === 6
 						? 'navbar-item-selected' 
 						: ''}`}
 				onClick={()=>setItemSelected(6)}
+			>Clientes</Link>
+			<Link 
+				to='/usuarios' 
+				className={
+					`navbar-item ${
+						itemSelected === 7
+						? 'navbar-item-selected' 
+						: ''}`}
+				onClick={()=>setItemSelected(7)}
 			>Usuarios</Link>
 			<Link
 				to="/login"

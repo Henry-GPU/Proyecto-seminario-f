@@ -28,6 +28,7 @@ import AccionesCobranzaPage from './pages/AccionesCobranza';
 import DashboardView from './component/DashboardViewx';
 import DebtAssignment from './component/DebtAssignment';
 import RegistroPago from './component/RegistroPago';
+import PagosVencidos from './component/PagosVencidos';
 
 function App() {
   const { accessToken } = useAccToken();
@@ -197,6 +198,14 @@ function MainContent({ userName, isAuth, setIsAuth, width, permissions, loading,
                   <RegistroPago url={url} permissions={permissions} allowedPermission={'MANAGE_PERMISSIONS'}/>
                 </ProtectedRoute>
               }></Route>
+            <Route
+            path='/home/PagosVencidos'
+            element={
+              <ProtectedRoute isAuth={isAuth} permissions={permissions} allowedPermission={'MANAGE_PERMISSIONS'}>
+                <PagosVencidos url={url} permissions={permissions} allowedPermission={'MANAGE_PERMISSIONS'}/>
+              </ProtectedRoute>
+            }
+            ></Route>
           </Routes>
         </div>
     </div>
