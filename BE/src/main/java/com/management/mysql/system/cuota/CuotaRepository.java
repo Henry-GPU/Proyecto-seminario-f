@@ -9,7 +9,7 @@ import java.util.List;
 @Repository
 public interface CuotaRepository extends JpaRepository<Cuota, Integer> {
     Long countByEstado(Integer estado);
-    Long countByFechaProgramadaLessThanAndEstado(LocalDate fechaProgramada, Integer estado);
+    Long countByFechaProgramadaLessThanAndEstadoAndDeuda_id(LocalDate fechaProgramada, Integer estado, Integer idDeuda);
     Cuota findFirstByDeuda_idAndEstadoOrderByFechaProgramadaAsc(Integer idDeuda, Integer estado);
     List<Cuota> findAllByDeuda_idAndEstado(Integer id, Integer estado);
     List<Cuota> findByDeuda_id(Integer id);

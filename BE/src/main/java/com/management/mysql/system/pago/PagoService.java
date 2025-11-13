@@ -28,10 +28,10 @@ public class PagoService {
             throw new RuntimeException("No se encontró el cliente con el id: " + idCliente);
         }
         if(debtRepository.findByCustomer_Id(idCliente) == null){
-            throw new RuntimeException("El cliente no tiene deudas activas.");
+            return "El cliente no tiene deudas activas.";
         }
         Debt debt = debtRepository.findByCustomer_Id(idCliente);
-        Long cantCuotasVencidas = cuotaRepository.countByFechaProgramadaLessThanAndEstado(LocalDate.now().minusMonths(1).minusDays(1),0);
+        Long cantCuotasVencidas = cuotaRepository.countByFechaProgramadaLessThanAndEstadoAndDeuda_id(LocalDate.now().minusMonths(1).minusDays(1),0, debt.getId());
         if (cantCuotasVencidas > 0){
             return  "El cliente tiene un total de: " + cantCuotasVencidas + " cuotas vencidas.";
         }

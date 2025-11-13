@@ -25,7 +25,7 @@ function PagosVencidos() {
 
     try {
       setLoading(true);
-      const resp = await apiClient.get(`/api/pago/${parsed}/vencido`);
+      const resp = await apiClient.get(`/pago/${parsed}/vencido`);
       setData(resp?.data ?? null);
     } catch (err) {
       const msg = err?.response?.data || err?.message || "No se pudo obtener la información";
