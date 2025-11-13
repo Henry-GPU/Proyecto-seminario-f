@@ -1,7 +1,7 @@
 import apiClient from "./apiClient";
 
 
-export const getTotalPagos = async (data) =>{
+export const getTotalPagos = async () =>{
   try {
     const response = await apiClient.get("pago/get/total");
     return response;
@@ -9,6 +9,15 @@ export const getTotalPagos = async (data) =>{
     handleRequestError(error);
   }
 };
+
+export const crearPago = async (data) =>{
+  try {
+    const response = await apiClient.post("pago/registrar", data);
+    return response;
+  } catch (error) {
+    handleRequestError(error);
+  }
+}
 
 
 // ==================== Error Handler ====================

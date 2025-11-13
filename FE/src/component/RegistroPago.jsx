@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import apiClient from "../services/apiClient";
+import { crearPago } from "../services/PagoService";
 
 // Backend: POST /api/pago/registrar { idCliente }
 function RegistroPago() {
@@ -26,7 +27,7 @@ function RegistroPago() {
 
     try {
       setLoading(true);
-      const { data } = await apiClient.post("/api/pago/registrar", {
+      const { data } = crearPago({
         idCliente: parsed,
       });
       setMessage(typeof data === "string" ? data : "Pago registrado correctamente.");

@@ -47,6 +47,7 @@ public class PagoService {
         Cuota cuotaPorPagar = cuotaRepository.findFirstByDeuda_idAndEstadoOrderByFechaProgramadaAsc(deuda.getId(), 0);
         LocalDate fechaPorPagar = cuotaPorPagar.getFechaProgramada();
 
+
         Pago pago = new Pago();
         pago.setMonto(cuotaPorPagar.getMonto());
         pago.setDeuda(deuda);

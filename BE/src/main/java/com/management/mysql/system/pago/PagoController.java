@@ -23,6 +23,8 @@ public class PagoController {
     public ResponseEntity<?> registrarPago(@RequestBody PagoCuotaRequest request){
         try {
             return  ResponseEntity.ok(pagoService.registrarPago(request));
+            
+
         }catch (RuntimeException e){
             return  ResponseEntity.badRequest().body("Oops, algo salió mal: " + e);
         }

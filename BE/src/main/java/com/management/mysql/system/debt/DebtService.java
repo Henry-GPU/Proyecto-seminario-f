@@ -38,7 +38,7 @@ public class DebtService {
         debt.setMontoInicial(request.getMontoInicial());
         debt.setInteres(interesRepository.findById(request.getIdInteres()).orElse(null));
         debt.setNoCuotas(request.getNoCuotas());
-        debt.setFechaAsignacion(request.getFechaAsignacion());
+        debt.setFechaAsignacion(LocalDate.now());
         debt.setEstado(1);
 
         debtRepository.save(debt);
