@@ -29,6 +29,7 @@ import DashboardView from './component/DashboardViewx';
 import DebtAssignment from './component/DebtAssignment';
 import RegistroPago from './component/RegistroPago';
 import PagosVencidos from './component/PagosVencidos';
+import CrearDeuda from './component/CrearDeuda';
 
 function App() {
   const { accessToken } = useAccToken();
@@ -203,6 +204,14 @@ function MainContent({ userName, isAuth, setIsAuth, width, permissions, loading,
             element={
               <ProtectedRoute isAuth={isAuth} permissions={permissions} allowedPermission={'MANAGE_PERMISSIONS'}>
                 <PagosVencidos url={url} permissions={permissions} allowedPermission={'MANAGE_PERMISSIONS'}/>
+              </ProtectedRoute>
+            }
+            ></Route>
+            <Route
+            path='/home/crear-deuda'
+            element={
+              <ProtectedRoute isAuth={isAuth} permissions={permissions} allowedPermission={'MANAGE_PERMISSIONS'}>
+                <CrearDeuda url={url} permissions={permissions} allowedPermission={'MANAGE_PERMISSIONS'}/>
               </ProtectedRoute>
             }
             ></Route>

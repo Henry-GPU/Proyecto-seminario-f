@@ -26,11 +26,20 @@ function Navbar({permissions}){
 		else if(currentLocation === 'acciones-cobranza'){
 			setItemSelected(3);
 		}
-		else if(currentLocation === 'clientes'){
+		else if(currentLocation === 'pagos'){
 			setItemSelected(4);
 		}
+		else if(currentLocation === 'pagosvencidos'){
+			setItemSelected(5);
+		}
+		else if(currentLocation === 'crear-deuda'){
+			setItemSelected(7);
+		}
+		else if(currentLocation === 'clientes'){
+			setItemSelected(7);
+		}
 		else if(currentLocation === 'usuarios'){
-			setItemSelected(4);
+			setItemSelected(8);
 		}
 	},[currentLocation]);
 	
@@ -106,24 +115,33 @@ function Navbar({permissions}){
                         ? 'navbar-item-selected'
                         : ''}`}
                 onClick={()=>setItemSelected(5)}
-            >PagosVencidos</Link>
+            >Pagos Vencidos</Link>
+			<Link
+                to='/home/crear-deuda'
+                className={
+                    `navbar-item ${
+                        itemSelected === 6
+                        ? 'navbar-item-selected'
+                        : ''}`}
+                onClick={()=>setItemSelected(6)}
+            >Crear Deuda</Link>
 			<Link 
 				to='/clientes' 
-				className={
-					`navbar-item ${
-						itemSelected === 6
-						? 'navbar-item-selected' 
-						: ''}`}
-				onClick={()=>setItemSelected(6)}
-			>Clientes</Link>
-			<Link 
-				to='/usuarios' 
 				className={
 					`navbar-item ${
 						itemSelected === 7
 						? 'navbar-item-selected' 
 						: ''}`}
 				onClick={()=>setItemSelected(7)}
+			>Clientes</Link>
+			<Link 
+				to='/usuarios' 
+				className={
+					`navbar-item ${
+						itemSelected === 8
+						? 'navbar-item-selected' 
+						: ''}`}
+				onClick={()=>setItemSelected(8)}
 			>Usuarios</Link>
 			<Link
 				to="/login"

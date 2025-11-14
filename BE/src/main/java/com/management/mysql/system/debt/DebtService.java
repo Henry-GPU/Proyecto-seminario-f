@@ -39,7 +39,7 @@ public class DebtService {
         debt.setInteres(interesRepository.findById(request.getIdInteres()).orElse(null));
         debt.setNoCuotas(request.getNoCuotas());
         debt.setFechaAsignacion(LocalDate.now());
-        debt.setEstado(1);
+        debt.setEstado(0);
 
         debtRepository.save(debt);
         Double montoCuota = (debt.getMontoInicial() + (debt.getMontoInicial() * (debt.getInteres().getPorcentaje()/100)))/debt.getNoCuotas();

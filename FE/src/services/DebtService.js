@@ -30,9 +30,9 @@ export const getTotalDebts = async (data) =>{
 
 
 
-export const updateProductStock = async (data)=>{
+export const crearDeuda = async (data)=>{
   try {
-    const response = await apiClient.post("products/addstock", data);
+    const response = await apiClient.post("debt/create", data);
     return response;
   } catch (error) {
     handleRequestError(error);
