@@ -149,7 +149,7 @@ function CustomersDashboard(){
         }
         setIsLoading(false);
       },300);
-      
+      console.log(response.data);
     } catch (error) {
       if (error.response) {
         console.error('Error del servidor:', error.response.data);
@@ -270,6 +270,7 @@ function CustomersDashboard(){
             </button>
           </div>
           <div className='text-[1px] dashboard-table-specs'>
+            <p className='flex-[1]'>ID</p>
             <p className='flex-[2]'>Nombre</p>
             <p className='flex-[4] hidden lg:block'>Email</p>
             <p className='flex-[2] hidden md:block'>Telefono</p>
@@ -279,7 +280,8 @@ function CustomersDashboard(){
           </div>
           {customers.length > 0 ?
           customers.map((customer) =>(
-            <div className='dashboard-table-item' key={customer?.id_cliente}>
+            <div className='dashboard-table-item' key={customer?.id}>
+              <p className='flex-[1]'>{customer.id}</p>
               <p className='flex-[2]'>{customer.nombres} {customer.apellidos}</p>
               <p className='flex-[4] hidden lg:block'>{customer.email}</p>
               <p className='flex-[2] hidden md:block'>{customer.telefono}</p>

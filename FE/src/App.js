@@ -30,6 +30,7 @@ import DebtAssignment from './component/DebtAssignment';
 import RegistroPago from './component/RegistroPago';
 import PagosVencidos from './component/PagosVencidos';
 import CrearDeuda from './component/CrearDeuda';
+import RegistrarAccionCobranza from './component/RegistrarAccionCobranza';
 
 function App() {
   const { accessToken } = useAccToken();
@@ -139,7 +140,7 @@ function MainContent({ userName, isAuth, setIsAuth, width, permissions, loading,
             <Route 
               path='/cuentas-mora' 
               element={         
-                <ProtectedRoute isAuth={isAuth} permissions={permissions} allowedPermission={'CREATE_SALE'}>
+                <ProtectedRoute isAuth={isAuth} permissions={permissions} allowedPermission={''}>
                   <CuentasMoraPage url={url}/>
                 </ProtectedRoute>
               }
@@ -147,7 +148,7 @@ function MainContent({ userName, isAuth, setIsAuth, width, permissions, loading,
             <Route 
               path='/acciones-cobranza' 
               element={         
-                <ProtectedRoute isAuth={isAuth} permissions={permissions} allowedPermission={'CREATE_SALE'}>
+                <ProtectedRoute isAuth={isAuth} permissions={permissions} allowedPermission={''}>
                   <AccionesCobranzaPage url={url}/>
                 </ProtectedRoute>
               }
@@ -155,7 +156,7 @@ function MainContent({ userName, isAuth, setIsAuth, width, permissions, loading,
             <Route 
               path='/clientes' 
               element={
-                <ProtectedRoute isAuth={isAuth} permissions={permissions} allowedPermission={'CREATE_SALE'}>
+                <ProtectedRoute isAuth={isAuth} permissions={permissions} allowedPermission={''}>
                   <CustomersDashboard url={url}/>
                 </ProtectedRoute>
               }
@@ -163,7 +164,7 @@ function MainContent({ userName, isAuth, setIsAuth, width, permissions, loading,
             <Route 
               path='/usuarios/crear' 
               element={
-                <ProtectedRoute isAuth={isAuth} permissions={permissions}  allowedPermission={'MANAGE_USERS'}>
+                <ProtectedRoute isAuth={isAuth} permissions={permissions}  allowedPermission={''}>
                   <CreateUserPage/>
                 </ProtectedRoute>
               } 
@@ -171,15 +172,15 @@ function MainContent({ userName, isAuth, setIsAuth, width, permissions, loading,
             <Route 
               path='/usuarios' 
               element={
-                <ProtectedRoute isAuth={isAuth} permissions={permissions}  allowedPermission={'MANAGE_USERS'}>
+                <ProtectedRoute isAuth={isAuth} permissions={permissions}  allowedPermission={''}>
                   <UsersDashboard/>
                 </ProtectedRoute>
               } 
             />
             <Route 
-              path='/home/clientes' 
+              path='/clientes' 
               element={
-                <ProtectedRoute isAuth={isAuth} permissions={permissions}  allowedPermission={'MANAGE_CUSTOMERS'}>
+                <ProtectedRoute isAuth={isAuth} permissions={permissions}  allowedPermission={''}>
                   <CustomersDashboard/>
                 </ProtectedRoute>
               } 
@@ -193,25 +194,33 @@ function MainContent({ userName, isAuth, setIsAuth, width, permissions, loading,
               } 
             />
             <Route
-              path='/home/Pagos'
+              path='/Pagos'
               element={
-                <ProtectedRoute isAuth={isAuth} permissions={permissions} allowedPermission={'MANAGE_PERMISSIONS'}>
-                  <RegistroPago url={url} permissions={permissions} allowedPermission={'MANAGE_PERMISSIONS'}/>
+                <ProtectedRoute isAuth={isAuth} permissions={permissions} allowedPermission={''}>
+                  <RegistroPago url={url} permissions={permissions} allowedPermission={''}/>
                 </ProtectedRoute>
               }></Route>
             <Route
-            path='/home/PagosVencidos'
+            path='/PagosVencidos'
             element={
-              <ProtectedRoute isAuth={isAuth} permissions={permissions} allowedPermission={'MANAGE_PERMISSIONS'}>
-                <PagosVencidos url={url} permissions={permissions} allowedPermission={'MANAGE_PERMISSIONS'}/>
+              <ProtectedRoute isAuth={isAuth} permissions={permissions} allowedPermission={''}>
+                <PagosVencidos url={url} permissions={permissions} allowedPermission={''}/>
               </ProtectedRoute>
             }
             ></Route>
             <Route
-            path='/home/crear-deuda'
+            path='/crear-deuda'
             element={
-              <ProtectedRoute isAuth={isAuth} permissions={permissions} allowedPermission={'MANAGE_PERMISSIONS'}>
-                <CrearDeuda url={url} permissions={permissions} allowedPermission={'MANAGE_PERMISSIONS'}/>
+              <ProtectedRoute isAuth={isAuth} permissions={permissions} allowedPermission={''}>
+                <CrearDeuda url={url} permissions={permissions} allowedPermission={''}/>
+              </ProtectedRoute>
+            }
+            ></Route>
+            <Route
+            path='/registrar-accion-cobranza'
+            element={
+              <ProtectedRoute isAuth={isAuth} permissions={permissions} allowedPermission={''}>
+                <RegistrarAccionCobranza url={url} permissions={permissions} allowedPermission={''}/>
               </ProtectedRoute>
             }
             ></Route>

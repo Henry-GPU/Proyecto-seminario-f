@@ -28,8 +28,6 @@ export const getTotalDebts = async (data) =>{
   }
 };
 
-
-
 export const crearDeuda = async (data)=>{
   try {
     const response = await apiClient.post("debt/create", data);
@@ -151,8 +149,6 @@ export const desProduct = async (data) =>{
   }
 };
 
-
-
 export const delProduct = async (data) => {
   try {
     const response = await apiClient.delete(`products/${data}/delete`);
@@ -164,12 +160,13 @@ export const delProduct = async (data) => {
 
 // ==================== Error Handler ====================
 
-const handleRequestError = (error) => {
-  if (error.response) {
-    console.error("Error en la respuesta:", error.response.data);
-    throw new Error(error.response.data.error || JSON.stringify(error.response.data));
-  } else {
-    console.error("Error de red:", error.message);
-    throw new Error("Error de red o del servidor");
-  }
+export const handleRequestError = (error) => {
+  const mensaje = 
+    error.response?.data?.message || 
+    error.response?.data?.error || 
+    error.message || 
+    "Error inesperado";
+
+  console.error("Error en la petición:", mensaje);
+  alert(mensaje); // o un toast
 };

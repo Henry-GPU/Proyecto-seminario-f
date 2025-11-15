@@ -33,13 +33,16 @@ function Navbar({permissions}){
 			setItemSelected(5);
 		}
 		else if(currentLocation === 'crear-deuda'){
+			setItemSelected(6);
+		}
+		else if(currentLocation === 'registrar-accion-cobranza'){
 			setItemSelected(7);
 		}
 		else if(currentLocation === 'clientes'){
-			setItemSelected(7);
+			setItemSelected(8);
 		}
 		else if(currentLocation === 'usuarios'){
-			setItemSelected(8);
+			setItemSelected(9);
 		}
 	},[currentLocation]);
 	
@@ -99,7 +102,7 @@ function Navbar({permissions}){
 				onClick={()=>setItemSelected(3)}
 			>Acciones de Cobranza</Link>
 			<Link
-                to='/home/pagos'
+                to='/pagos'
                 className={
                     `navbar-item ${
                         itemSelected === 4
@@ -108,7 +111,7 @@ function Navbar({permissions}){
                 onClick={()=>setItemSelected(4)}
             >Pagos</Link>
 			<Link
-                to='/home/pagosvencidos'
+                to='/pagosvencidos'
                 className={
                     `navbar-item ${
                         itemSelected === 5
@@ -117,7 +120,7 @@ function Navbar({permissions}){
                 onClick={()=>setItemSelected(5)}
             >Pagos Vencidos</Link>
 			<Link
-                to='/home/crear-deuda'
+                to='/crear-deuda'
                 className={
                     `navbar-item ${
                         itemSelected === 6
@@ -125,23 +128,32 @@ function Navbar({permissions}){
                         : ''}`}
                 onClick={()=>setItemSelected(6)}
             >Crear Deuda</Link>
+			<Link
+                to='/registrar-accion-cobranza'
+                className={
+                    `navbar-item ${
+                        itemSelected === 7
+                        ? 'navbar-item-selected'
+                        : ''}`}
+                onClick={()=>setItemSelected(7)}
+            >Registrar Accion Cobranza</Link>
 			<Link 
 				to='/clientes' 
-				className={
-					`navbar-item ${
-						itemSelected === 7
-						? 'navbar-item-selected' 
-						: ''}`}
-				onClick={()=>setItemSelected(7)}
-			>Clientes</Link>
-			<Link 
-				to='/usuarios' 
 				className={
 					`navbar-item ${
 						itemSelected === 8
 						? 'navbar-item-selected' 
 						: ''}`}
 				onClick={()=>setItemSelected(8)}
+			>Clientes</Link>
+			<Link 
+				to='/usuarios' 
+				className={
+					`navbar-item ${
+						itemSelected === 9
+						? 'navbar-item-selected' 
+						: ''}`}
+				onClick={()=>setItemSelected(9)}
 			>Usuarios</Link>
 			<Link
 				to="/login"

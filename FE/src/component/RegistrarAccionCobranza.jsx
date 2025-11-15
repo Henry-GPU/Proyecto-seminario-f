@@ -1,21 +1,40 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState, useEffect } from "react";
 import apiClient from "../services/apiClient";
+import { getCollections } from "../services/DebtAssigmentService";
 import { crearDeuda } from "../services/DebtService";
+import { use } from "react";
+import { registrarAccionCobranza } from "../services/cobranzaService";
 
 // Visualización de pagos vencidos
 // Backend: GET /api/pago/{id}/vencido
-function CrearDeuda() {
+function RegistrarAccionCobranza() {
   const [idCliente, setIdCliente] = useState("");
   const [montoInicial, setMontoInicial] = useState("");
   const [noCuotas, setNoCuotas] = useState("");
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState(null);
   const [error, setError] = useState(null);
+  const [collections, setCollections] = useState([]);
+  const [collection, setCollection] = useState(0);
 
   const clearMessages = () => {
     setMessage(null);
     setError(null);
   };
+
+    const loadCollections = async () => {
+      try {
+          getCollections().then((res)=>{
+          setCollections(res.data);
+        });
+      } catch (error) {
+        
+      }
+    };
+  
+    useEffect(() => {
+      loadCollections();
+    }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -30,13 +49,11 @@ function CrearDeuda() {
 
     try {
       setLoading(true);
-      const { data } = crearDeuda({
+      const { data } = registrarAccionCobranza({
         idCliente: parsed,
-        montoInicial: montoInicial,
-        noCuotas: noCuotas,
-        idInteres: 1,
+        idCobranza: collection,
       });
-      setMessage(typeof data === "string" ? data : "Pago registrado correctamente.");
+      setMessage(typeof data === "string" ? data : "Accion registrada correctamente.");
       setIdCliente("");
     } catch (data) {
       // const msg = err?.response?.data || err?.message || "No se pudo registrar el pago";
@@ -46,10 +63,12 @@ function CrearDeuda() {
     }
   };
 
+  
+
   return (
     <div className="form-main-container">
       <form className="form-card" onSubmit={handleSubmit}>
-        <h2 className="form-card-title">Creacion de deuda</h2>
+        <h2 className="form-card-title">Registro Accion Cobranza</h2>
 
         {/* Campo: ID Cliente */}
         <div className="form-item">
@@ -67,31 +86,14 @@ function CrearDeuda() {
             min={1}
           />
           <label htmlFor="idCliente" className="form-input-label">
-            Monto
+            Accion
           </label>
-          <input
-            id="montoInicial"
-            name="montoInicial"
-            type="number"
-            className="form-input"
-            placeholder="Ingrese el Monto Inicial"
-            value={montoInicial}
-            onChange={(e) => setMontoInicial(e.target.value)}
-            min={1000}
-          />
-          <label htmlFor="idCliente" className="form-input-label">
-            Numero de Cuotas
-          </label>
-          <input
-            id="noCuotas"
-            name="noCuotas"
-            type="number"
-            className="form-input"
-            placeholder="Ingrese el numero de cuotas"
-            value={noCuotas}
-            onChange={(e) => setNoCuotas(e.target.value)}
-            min={1}
-          />
+          <select className="combo-form" style={{}} id="collection" value={collection} onChange={(e) => setCollection(e.target.value)}>
+              <option value="0">Seleccionar Canal de Cobranza</option>
+              {collections?.map((u) => (
+                <option key={u.id} value={u.id}>{u.nombre}</option>
+              ))}
+            </select>        
         </div>
 
         {/* Mensajes */}
@@ -115,6 +117,7 @@ function CrearDeuda() {
               setIdCliente("");
               setMontoInicial("");
               setNoCuotas("");
+              setCollection(0);
               clearMessages();
             }}
             disabled={loading}
@@ -130,4 +133,4 @@ function CrearDeuda() {
   );
 }
 
-export default CrearDeuda;
+export default RegistrarAccionCobranza;

@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.management.mysql.system.message.Message;
+
 @RestController
 @RequestMapping("api/debt")
 public class DebtController {
@@ -18,11 +20,14 @@ public class DebtController {
 
     @PostMapping("/create")
     public ResponseEntity<?> createDebt(@RequestBody DebtCreateRequest request) {
+        Message message = new Message("");
         try {
+            message.setMessage("Deuda creada con éxito.");
             debtService.createDebt(request);
-            return ResponseEntity.ok("Deuda creada exitosamente.");
+            return ResponseEntity.ok(message);
         } catch (Exception e) {
-            return ResponseEntity.status(500).body("Error al crear la deuda.");
+            message = new Message(e.getMessage());
+            return ResponseEntity.status(500).body(message);
         }
     }
 

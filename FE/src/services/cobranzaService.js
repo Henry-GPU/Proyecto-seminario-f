@@ -10,6 +10,25 @@ export const getMontoPorCanal = async (data) =>{
   }
 };
 
+export const registrarAccionCobranza = async (data) =>{
+  try {
+    const response = await apiClient.post("collectionaction/create", data);
+    return response;
+  } catch (error) {
+    handleRequestError(error);
+  }
+};
+
+export const getAllCollectionActions = async () =>{
+  try {
+    const response = await apiClient.get("collectionaction/getAll");
+    return response;
+  }
+  catch (error) {
+    handleRequestError(error);
+  }
+};
+
 
 // ==================== Error Handler ====================
 

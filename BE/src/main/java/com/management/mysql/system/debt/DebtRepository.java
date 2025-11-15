@@ -18,4 +18,6 @@ public interface DebtRepository extends JpaRepository<Debt, Integer> {
     Double sumaTotal();
 
     List<Debt> findByEstado(Integer estado);
+    
+    Long countByCustomer_IdAndEstadoOrEstado(Integer idCliente, Integer estado, Integer estado2);
 }

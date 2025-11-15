@@ -33,6 +33,12 @@ public class DebtService {
             throw new IllegalArgumentException("El interes con el id: [" + request.getIdInteres() + "] no existe." );
         }
 
+        Long existingDebtCount = debtRepository.countByCustomer_IdAndEstadoOrEstado(request.getIdCliente(), 0 , 1);
+
+        if (existingDebtCount > 0) {
+            throw new IllegalArgumentException("El cliente con el id: [" + request.getIdCliente() + "] ya tiene una deuda activa." );
+        }
+
         debt.setDescripcion(request.getDescripcion());
         debt.setCustomer(customerRepository.findById(request.getIdCliente()).orElse(null));
         debt.setMontoInicial(request.getMontoInicial());
